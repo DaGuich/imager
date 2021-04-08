@@ -1,8 +1,12 @@
-import argparse
+#!/usr/bin/env python3
 import pathlib
 import datetime
 
-from exif import Image
+try:
+    from exif import Image
+except ImportError:
+    import sys
+    sys.stderr.write('exif not available. Install with ')
 
 
 def main(search: pathlib.Path, target: pathlib.Path, recursive=True, print_progress=False, verbose=False):
@@ -43,17 +47,20 @@ def main(search: pathlib.Path, target: pathlib.Path, recursive=True, print_progr
             print(f'No exif: {image.resolve()}')
 
     print('Start copying')
-    for k, d in dates.items():
-        for i, p in enumerate(d):
-            file_name = (f'{k.year:02}{k.month:02}{k.day:02}',
-                         f'{k.hour:02}{k.minute:02}{k.second:02}',
+    for date, file_list in dates.items():
+        for i, path in enumerate(file_list):
+            file_name = (f'{date.year:02}{date.month:02}{date.day:02}',
+                         f'{date.hour:02}{date.minute:02}{date.second:02}',
                          f'{i+1:02}.JPG')
             file_name = '_'.join(file_name)
+            if verbose:
+                print(f'Copy {path} -> {file_name}')
             new_path = target / file_name
-            p.rename(new_path)
+            path.rename(new_path)
 
 
 if __name__ == '__main__':
+    import argparse
     prsr = argparse.ArgumentParser()
     prsr.add_argument('search')
     prsr.add_argument('target')

@@ -7,6 +7,7 @@ name = "pypi"
 exif = "1.2.1"
 
 [dev-packages]
+wheel = "0.36.2"
 
 [requires]
-python_version = "3.9"
+python_version = ">=3.8"
