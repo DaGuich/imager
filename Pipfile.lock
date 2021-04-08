@@ -1,0 +1,36 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "9f7cdcda11729f6c4aeca1137b2d7febc37a60bfcffd4e91d4f5a632e08ba305"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.9"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "exif": {
+            "hashes": [
+                "sha256:b6eaf1c11cd54a177231ff119eb0c1fb19f7a2d0402dd5a2b49dfe3d7fac7abc",
+                "sha256:eac79c3359c01a4c96a5bebcbe8ce35729f2f49d13883c56cb8c0a1de362a556"
+            ],
+            "index": "pypi",
+            "version": "==1.2.1"
+        },
+        "plum-py": {
+            "hashes": [
+                "sha256:9328ec7502046134c5f16b04d85947559006e200d7268b7d5ed30f88735a48e5"
+            ],
+            "markers": "python_version >= '3.6'",
+            "version": "==0.3.1"
+        }
+    },
+    "develop": {}
+}
