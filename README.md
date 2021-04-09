@@ -2,6 +2,8 @@
 An image organizer
 
 # Usage
+
+```
 usage: imoger.py [-h] [-r] [-p] [-m] [-v] [-d] search target
 
 positional arguments:
@@ -15,3 +17,4 @@ optional arguments:
 -m, --move       Instead of copying move the files
 -v, --verbose    Print more information
 -d, --dir        Maintain directory structure YYYY/MM/DD/file.JPG
+```
