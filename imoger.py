@@ -79,8 +79,8 @@ def main(search: pathlib.Path, target: pathlib.Path,
 if __name__ == '__main__':
     import argparse
     prsr = argparse.ArgumentParser()
-    prsr.add_argument('search')
-    prsr.add_argument('target')
+    prsr.add_argument('search', help='Path to search in')
+    prsr.add_argument('target', help='Files will be transfered to this location')
     prsr.add_argument('-r', '--recursive', action='store_true',
                       help='Search recursive')
     prsr.add_argument('-p', '--progress', action='store_true',
